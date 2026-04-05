@@ -14,8 +14,9 @@
 // Voltage reference table for ~4.9V rail:
 // 1.6 V  -> PWM  83
 // 2.0 V  -> PWM 104
-// 2.4 V  -> PWM 125   <-- neutral
+// 2.4 V  -> PWM 125
 // 2.68 V -> PWM 139
+// 2.7 V  -> PWM 140   <-- neutral
 // 3.0 V  -> PWM 156
 // 3.3 V  -> PWM 172
 // 3.7 V  -> PWM 193
@@ -28,7 +29,7 @@ const int pwmPinRight = 10;
 
 // Output calibration
 const int minPWM     = 83;   // ~1.6V
-const int neutralPWM = 125;  // ~2.4V
+const int neutralPWM = 140;  // ~2.7V
 const int maxPWM     = 193;  // ~3.7V
 
 const int pwmRangeUp   = maxPWM - neutralPWM;
