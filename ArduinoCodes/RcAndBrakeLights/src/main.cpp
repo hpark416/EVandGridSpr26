@@ -21,7 +21,7 @@ enum BrakeLightMode : uint8_t {
   BRAKE_LIGHT_RC_ONLY = 1,    // brake bar from RC only (stick + lift-off); IMU not used for bar
 };
 
-static const BrakeLightMode BRAKE_LIGHT_MODE = 0;
+static const BrakeLightMode BRAKE_LIGHT_MODE = 1;
 
 // Set true if "forward throttle" reads positive on your receiver channel,
 // false if "forward throttle" reads negative.
