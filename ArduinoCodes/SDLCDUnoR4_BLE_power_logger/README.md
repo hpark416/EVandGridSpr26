@@ -9,6 +9,16 @@ Use this when you want **local display + SD archive** and **wireless live values
 
 ---
 
+## Android tester install guide
+
+For APK install and validation steps (including troubleshooting), see:
+
+- **[`TESTER_INSTRUCTIONS_ANDROID_APK.md`](TESTER_INSTRUCTIONS_ANDROID_APK.md)**
+
+This project is intended to pair with that app via BLE for the device-connect and live telemetry flow.
+
+---
+
 ## Compared to `SDLCDUnoR4`
 
 | Feature | SDLCDUnoR4 | This project |
