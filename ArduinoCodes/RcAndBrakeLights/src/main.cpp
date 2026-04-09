@@ -21,7 +21,7 @@ enum BrakeLightMode : uint8_t {
   BRAKE_LIGHT_RC_ONLY = 1,    // brake bar from RC only (stick + lift-off); IMU not used for bar
 };
 
-static const BrakeLightMode BRAKE_LIGHT_MODE = 1;
+static const BrakeLightMode BRAKE_LIGHT_MODE = 0;
 
 // Set true if "forward throttle" reads positive on your receiver channel,
 // false if "forward throttle" reads negative.
@@ -627,8 +627,14 @@ void loop() {
 
     rcSteerX = x;
 
-    float left  = y + x;
-    float right = y - x;
+    // Flip steering only in IMU-only mode.
+    float steer = x;
+    if (BRAKE_LIGHT_MODE == BRAKE_LIGHT_IMU_ONLY) {
+      steer = -steer;
+    }
+
+    float left  = y + steer;
+    float right = y - steer;
 
     float maxMag = max(1.0f, max(fabsf(left), fabsf(right)));
     left  /= maxMag;
