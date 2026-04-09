@@ -238,7 +238,7 @@ void loop() {
   BatVolt = BatVolt * 5.0 / 16383.0 * ((R1 + R2) / (double)R2);
 
   BatCur = analogRead(A1);
-  BatCur = ((BatCur * 5.0 / 16383.0) - 2.49) / 0.066;
+  BatCur = ((BatCur * 5.0 / 16383.0) - 2.49) / 0.66;
 
   BatPower = BatVolt * BatCur;
 
@@ -246,7 +246,7 @@ void loop() {
   CharVolt = CharVolt * 5.0 / 16383.0 * ((R1 + R2) / (double)R2);
 
   CharCur = analogRead(A3);
-  CharCur = ((CharCur * 5.0 / 16383.0) - 2.49) / 0.4;
+  CharCur = ((CharCur * 5.0 / 16383.0) - 2.49) / 0.66;
 
   CharPower = CharVolt * CharCur;
 
